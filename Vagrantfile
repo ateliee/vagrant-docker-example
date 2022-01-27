@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "./", "/home/vagrant/share", type:"virtualbox"
 
   # Docker Settings
-  # config.vm.provision :docker, run: "always"
-  # config.vm.provision :docker_compose, yml: "/home/vagrant/share/docker-compose.yml", run: "always"
+  config.vm.provision :docker
+  config.vm.provision :docker_compose, compose_version: "1.24.1"
 
 end
